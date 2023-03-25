@@ -1,0 +1,267 @@
+/* @font-face {
+  font-family: "Noto Sans Avestan";
+  src: url("../fonts/notosansavestan-regular-webfont.woff2") format("woff2"), url("../fonts/notosansavestan-regular-webfont.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../fonts/notosans-medium-webfont.woff2') format('woff2'),
+    url('../fonts/notosans-medium-webfont.woff') format('woff');
+  font-weight: 500;
+} */
+
+/***** Noto Sans Avestan ******/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700&display=swap');
+
+
+/***** Noto Sans ******/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --light-black: #24292f;
+  --text-color: #000;
+  --green-color: #2DA44E;
+  --light-blue: #1D9BF0;
+  --dark-blue: #1877F2;
+  --logo-color: #24292F;
+  --border-bottom: #d0d7de;
+  --main-text-color: #24292f;
+  --selected-main-text-color: #0969da;
+  --color-boder: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans Avestan", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-fg-default);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+h1 {
+  font-family: "Noto Sans Avestan", sans-serif;
+}
+
+/* Reusable start */
+.flex {
+  display: flex;
+}
+
+.header__link {
+  cursor: pointer;
+}
+
+.header__link:nth-child(1)::after,
+.header__link:nth-child(2)::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: -2px;
+  content: "";
+  border: 4px solid;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.margin-side {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Reusable end */
+
+.top__header__container {
+  display: none;
+}
+
+.bottom__header {
+  padding: 24px 0 !important;
+}
+
+.bottom__header__container {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .header__logo__container{} */
+
+.header__logo__btn {
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo__btn i {
+  font-size: 31px;
+  color: var(--logo-color);
+}
+
+.header__logo__btn .header__heading {
+  font-size: 1.2rem;
+  color: var(--logo-color);
+}
+
+.header__links__conatiner {
+  margin-top: 16px !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__links {
+  gap: 30px;
+}
+
+.header__link .header__link__btn {
+  color: var(--main-text-color);
+  font-family: 'Noto Sans';
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.header__link .selected {
+  color: var(--selected-main-text-color);
+}
+
+.header__signin__btn {
+  margin-top: 15px;
+}
+
+.header__signin__btn a {
+  padding: 8px 16px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: .8;
+  border: 1px solid;
+  border-color: var(--color-boder);
+  background-color: transparent;
+  color: var(--logo-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* students start */
+
+.students__main__container {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) -142.95%, #F3F2FF -142.95%, rgba(247, 246, 255, 0) -142.91%, #F3F3F3 285.26%);
+}
+
+.students__bg-img__container {
+  background-image: url(../img/background-img.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0 16px !important;
+  padding-bottom: 8px !important;
+  padding-top: 4px !important;
+}
+
+.students__heading__container {
+  margin-bottom: 24px !important;
+  margin-top: 16px !important;
+  font-size: 1.05rem;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--main-text-color);
+}
+
+.students__paragraph__container {
+  width: 66.66666664%;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--main-text-color);
+}
+
+.students__paragraph__container .bold {
+  font-weight: 600;
+}
+
+.students__main__btn {
+  height: auto;
+  display: inline-flex;
+  padding: 16px 30px 20px !important;
+  font-weight: 400 !important;
+  font-size: 16px;
+  background-color: var(--green-color);
+  color: #fff;
+  border-color: var(--color-btn-primary-border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.social__links__container {
+  margin-top: 32px;
+}
+
+.social__paragraph {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.social__btns {
+  gap: 10px;
+  flex-direction: row;
+}
+
+.bottom__students__container {
+  margin-bottom: 16px !important;
+}
+
+.social__btns .twitter,
+.social__btns .like {
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 1px 12px 1px 12px;
+  cursor: pointer;
+}
+
+.social__btns .twitter {
+  background-color: var(--light-blue);
+  height: 28px;
+  font-size: 12px;
+}
+
+.social__btns .twitter i {
+  font-size: 14px !important;
+}
+
+.social__btns .like {
+  background-color: var(--dark-blue);
+  font-size: 12px;
+  height: 28px;
+}
+
+img {
+  height: 26px;
+  width: 26px;
+}
