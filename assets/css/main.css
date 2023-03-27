@@ -358,4 +358,12 @@ h1 {
   margin-bottom: 8px;
 }
 
+.map-image-container {
+  margin-top: -90px;
+}
+
+.map-image-container img {
+  width: 100%;
+}
+
 /***Steps ends***/
