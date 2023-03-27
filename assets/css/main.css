@@ -19,19 +19,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --light-black: #24292f;
-  --text-color: #000;
-  --green-color: #2DA44E;
-  --light-blue: #1D9BF0;
-  --dark-blue: #1877F2;
-  --logo-color: #24292F;
-  --border-bottom: #d0d7de;
-  --main-text-color: #24292f;
-  --selected-main-text-color: #0969da;
-  --color-boder: rgba(27, 31, 36, 0.15);
+  /* Blue */
+  --blue-100: #b3d4fc;
+  --blue-200: #b7bfc7;
+  --blue-300: #79c0ff;
+  --blue-400: #8b949e;
+  --blue-500: #708090;
+  --blue-600: #388bfd;
+  --blue-700: #1da1f2;
+  --blue-800: #484f58;
+  --blue-900: #24292f;
+  --blue-1000: #21262d;
+
+  /* Gray */
+  --gray-100: #ffffff;
+  --gray-200: #f6f8fa;
+  --gray-300: #f5f2f0;
+  --gray-400: #e1e4e8;
+  --gray-500: #24292e;
+  --gray-600: #0d1117;
+
+  /* Green */
+  --green-100: #56d364;
+
+  /* Orange */
+  --orange-100: #9a6e3a;
+
+  /* Purple violet */
+  --purpleViolet-100: #b9a3e3;
+
+  /* Scarlet red */
+  --scarletRed-100: #dd4a68;
+
   --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
   --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+
 }
 
 * {
@@ -44,7 +66,8 @@ body {
   font-family: "Noto Sans Avestan", sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--color-fg-default);
+  color: #24292f;
+  overflow-x: hidden;
 }
 
 a {
@@ -64,18 +87,15 @@ h1 {
   font-family: "Noto Sans Avestan", sans-serif;
 }
 
-/* Reusable start */
-.flex {
-  display: flex;
+/*** Resuable ***/
+.selected-menu {
+  color: #0969da;
 }
 
-.header__link {
-  cursor: pointer;
-}
-
-.header__link:nth-child(1)::after,
-.header__link:nth-child(2)::after {
+.bh-link:nth-child(1)::after,
+.bh-link:nth-child(2)::after {
   display: inline-block;
+  margin-left: 4px;
   width: 0;
   height: 0;
   vertical-align: -2px;
@@ -86,182 +106,256 @@ h1 {
   border-left-color: transparent;
 }
 
-.margin-side {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-/* Reusable end */
-
-.top__header__container {
-  display: none;
+.subtitle {
+  font-size: 12px;
+  line-height: 20px;
 }
 
-.bottom__header {
-  padding: 24px 0 !important;
-}
-
-.bottom__header__container {
-  flex-direction: column;
-  align-items: center;
-}
-
-/* .header__logo__container{} */
-
-.header__logo__btn {
-  align-items: center;
-  gap: 10px;
-}
-
-.header__logo__btn i {
-  font-size: 31px;
-  color: var(--logo-color);
-}
-
-.header__logo__btn .header__heading {
-  font-size: 1.2rem;
-  color: var(--logo-color);
-}
-
-.header__links__conatiner {
-  margin-top: 16px !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.header__links {
-  gap: 30px;
-}
-
-.header__link .header__link__btn {
-  color: var(--main-text-color);
+.heading {
   font-family: 'Noto Sans';
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 24px;
+  font-weight: 550;
 }
 
-.header__link .selected {
-  color: var(--selected-main-text-color);
-}
-
-.header__signin__btn {
-  margin-top: 15px;
-}
-
-.header__signin__btn a {
-  padding: 8px 16px;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  opacity: .8;
-  border: 1px solid;
-  border-color: var(--color-boder);
-  background-color: transparent;
-  color: var(--logo-color);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* students start */
-
-.students__main__container {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) -142.95%, #F3F2FF -142.95%, rgba(247, 246, 255, 0) -142.91%, #F3F3F3 285.26%);
-}
-
-.students__bg-img__container {
-  background-image: url(../img/background-img.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 0 16px !important;
-  padding-bottom: 8px !important;
-  padding-top: 4px !important;
-}
-
-.students__heading__container {
-  margin-bottom: 24px !important;
-  margin-top: 16px !important;
-  font-size: 1.05rem;
-  line-height: 40px;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: var(--main-text-color);
-}
-
-.students__paragraph__container {
-  width: 66.66666664%;
-  margin-bottom: 32px;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: var(--main-text-color);
-}
-
-.students__paragraph__container .bold {
-  font-weight: 600;
-}
-
-.students__main__btn {
-  height: auto;
-  display: inline-flex;
-  padding: 16px 30px 20px !important;
-  font-weight: 400 !important;
+.description {
+  margin-bottom: 10px;
+  margin-top: 8px;
+  color: #57606a;
+  width: 83.3333333%;
   font-size: 16px;
-  background-color: var(--green-color);
-  color: #fff;
-  border-color: var(--color-btn-primary-border);
-  border-radius: 6px;
-  cursor: pointer;
 }
 
-.social__links__container {
-  margin-top: 32px;
+
+/***Header start***/
+.header {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #d0d7de;
 }
 
-.social__paragraph {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  padding-bottom: 10px;
+.header-wrapper {
+  background-color: var(--gray-500);
 }
 
-.social__btns {
-  gap: 10px;
-  flex-direction: row;
-}
-
-.bottom__students__container {
-  margin-bottom: 16px !important;
-}
-
-.social__btns .twitter,
-.social__btns .like {
-  justify-content: center;
+.top-header {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 30px;
+  display: flex;
   align-items: center;
-  gap: 4px;
+}
+
+.th-link {
   color: #fff;
-  border-radius: 9999px;
-  padding: 1px 12px 1px 12px;
   cursor: pointer;
 }
 
-.social__btns .twitter {
-  background-color: var(--light-blue);
-  height: 28px;
-  font-size: 12px;
+.bottom-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
-.social__btns .twitter i {
-  font-size: 14px !important;
+.bh-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 
-.social__btns .like {
-  background-color: var(--dark-blue);
-  font-size: 12px;
-  height: 28px;
+.img-container img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
 
-img {
-  height: 26px;
-  width: 26px;
+.bh-logo-title {
+  font-size: 24px !important;
+  line-height: 32px !important;
+  font-weight: 450;
 }
+
+.bh-links {
+  display: flex;
+  align-items: center;
+}
+
+.bh-link {
+  margin-left: 16px;
+  margin-right: 16px;
+  color: #24292f;
+  cursor: pointer;
+}
+
+.bh-links .btn {
+  font-family: "Noto Sans Avestan", sans-serif;
+  border: 1px solid rgba(27, 31, 36, 0.15);
+  border-radius: 6px;
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+  user-select: none;
+}
+
+/***Header ends***/
+
+/***Students start***/
+.student-container {
+  background: linear-gradient(180deg, #E9F4FF 0%, rgba(246, 248, 250, 0) 100%);
+  transform: rotate(-180deg);
+  text-align: center;
+}
+
+.sc-wrapper {
+  transform: rotate(180deg);
+  padding-bottom: 45px;
+}
+
+.sc-wrapper img {
+  margin-top: 32px !important;
+  height: 80px;
+}
+
+.sc-heading {
+  font-family: 'Noto Sans';
+  font-size: 48px !important;
+  line-height: 64px !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 500;
+  margin-bottom: 8px !important;
+}
+
+.sc-description {
+  font-size: 20px;
+  line-height: 28px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #57606a;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.sc-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.sc-button-link {
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  color: #0969da;
+  border: 1px solid;
+  border-radius: 6px;
+  font-weight: 500;
+  line-height: 20px;
+  border-color: rgba(27, 31, 36, 0.15);
+  padding: 18px 28px;
+  user-select: none;
+}
+
+.sc-button-link:nth-child(1) {
+  background-color: #0969da;
+  color: #fff;
+  border: none;
+}
+
+.sign-in {
+  color: #57606a;
+}
+
+.sign-in a {
+  color: #0969da;
+  cursor: pointer;
+}
+
+/***Students ends***/
+
+/***Steps starts***/
+.steps-program-container {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 40px;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 1px solid red; */
+}
+
+.sp-title-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9999;
+}
+
+.sp-heading {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 400;
+}
+
+.box-width {
+  width: 500px;
+}
+
+.step-1 .left-box {
+  position: relative;
+  top: 90px;
+  z-index: 999;
+}
+
+.step-1 .left-box .link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0969da;
+}
+
+.step-1 .right-box {
+  width: 722px;
+  max-width: 722px;
+  min-width: 420px;
+  margin-top: -39px;
+  margin-left: -144px;
+}
+
+.step-2 .left-box {
+  width: 722px;
+  max-width: 722px;
+  min-width: 420px;
+  margin-top: -39px;
+  margin-left: -144px;
+}
+
+.step-2 .right-box {
+  position: relative;
+  top: 90px;
+  z-index: 999;
+}
+
+.step-2 .right-box .description p:nth-child(1) {
+  margin-bottom: 8px;
+}
+
+/***Steps ends***/
